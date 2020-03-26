@@ -1,9 +1,28 @@
 const fs = require('fs');
 
+// Challenge: Work with JSON and the file system
+
+// Load and parse the JSON data
+const dataBuffer = fs.readFileSync('1-json.json');
+const dataJSON = dataBuffer.toString();
+const data = JSON.parse(dataJSON);
+
+// Change the name and age property
+data.name = "Ben"
+data.age = 32
+
+// Stringify data
+const objectJSON = JSON.stringify(data);
+
+// Overwrite JSON with modify data
+fs.writeFileSync('1-json.json', objectJSON);
+
+/*
 const dataBuffer = fs.readFileSync('1-json.json')
 const dataJSON = dataBuffer.toString()
 const data = JSON.parse(dataJSON)
 console.log(data.title)
+*/
 
 
 /* 
