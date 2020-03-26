@@ -32,6 +32,7 @@ const removeNotes = (title) => {
         console.log(chalk.bgRed("No note found!"))
     }else{
         console.log(chalk.bgGreen("Note removed!"))
+        saveNotes(notesToKeep)
     }
 
 }
