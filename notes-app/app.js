@@ -17,9 +17,27 @@ yargs.command({
 // Remove Command
 yargs.command({
     command: 'remove',
-    describe: 'Remove a new note',
+    describe: 'Remove a note',
     handler: () => {
         console.log('Removing a note')
+    }
+})
+
+// List Command
+yargs.command({
+    command: 'list',
+    describe: 'Listing notes',
+    handler: () => {
+        console.log('Listing notes')
+    }
+})
+
+// Read Command
+yargs.command({
+    command: 'read',
+    describe: 'Reading note',
+    handler: () => {
+        console.log('Reading note')
     }
 })
 
