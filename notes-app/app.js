@@ -11,7 +11,7 @@ yargs.command({
     describe: 'Add a new note',
     builder: {
         title:{
-            describe: 'Note tile',
+            describe: 'Note title',
             demandOption: true,
             type: 'string'
         },
@@ -30,6 +30,13 @@ yargs.command({
 yargs.command({
     command: 'remove',
     describe: 'Remove a note',
+    builder: {
+        title:{
+            describe: 'Note title',
+            demandOption: true,
+            type: 'string'
+        }
+    },
     handler: (argv) => {
         notes.removeNotes(argv.title)
     }

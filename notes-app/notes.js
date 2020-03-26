@@ -23,7 +23,13 @@ const addNotes = (title, body) => {
 }
 
 const removeNotes = (title) => {
-    console.log(title);
+    const notes = loadNotes();
+
+    const duplicateNotes = notes.filter((note) => {
+        return note.title === title
+    })
+
+    console.log(duplicateNotes)
 }
 
 const loadNotes = () => {
