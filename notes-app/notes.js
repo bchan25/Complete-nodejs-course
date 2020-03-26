@@ -19,9 +19,11 @@ const addNotes = (title, body) => {
     } else {
         console.log("Note TITLE taken.")
     }
-    
 
-    
+}
+
+const removeNotes = (title) => {
+    console.log(title);
 }
 
 const loadNotes = () => {
@@ -45,5 +47,6 @@ const saveNotes = (notes) => {
 
 module.exports = {
     getNotes: getNotes,
-    addNotes: addNotes
+    addNotes: addNotes,
+    removeNotes: removeNotes
 };
