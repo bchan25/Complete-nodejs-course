@@ -14,10 +14,16 @@ yargs.command({
             describe: 'Note tile',
             demandOption: true,
             type: 'string'
+        },
+        body:{
+            describe: 'Note body',
+            demandOption: true,
+            type: 'string'
         }
     },
     handler: (argv) => {
         console.log('Title: ' + argv.title)
+        console.log('Body: ' + argv.body)
     }
 })
 
