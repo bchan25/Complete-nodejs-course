@@ -4,12 +4,15 @@ const app = express()
 
 // app.com
 app.get('/', (req, res) => {
-    res.send("Hello Ben")
+    res.send("<h1>Weather</h1>")
 })
 
 // app.com/help
 app.get('/help', (req, res) => {
-    res.send("Help Page")
+    res.send({
+        name: "Ben",
+        age: 32
+    })
 })
 
 // app.com/about
