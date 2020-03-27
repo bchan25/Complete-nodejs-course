@@ -1,23 +1,31 @@
+const process = require('process');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast')
 
+let location = process.argv[2];
 
- geocode('Flint', (error, data) => {
+if(!location){
+    console.log("Please provide a valid location")
+} else{
+    geocode(location, (error, data) => {
     
-    if(error){
-        return console.log(error)
-    }
-    
-    forecast(data.latitude, data.longitude, (error, forecastData) => {
-        
         if(error){
             return console.log(error)
         }
         
-        console.log(data.location)
-        console.log(forecastData)
-    })
+        forecast(data.latitude, data.longitude, (error, forecastData) => {
+            
+            if(error){
+                return console.log(error)
+            }
+            
+            console.log(data.location)
+            console.log(forecastData)
+        })
+    
+     })
+}
 
- })
+ 
 
 
