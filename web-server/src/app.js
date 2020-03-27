@@ -17,12 +17,15 @@ app.get('/help', (req, res) => {
 
 // app.com/about
 app.get('/about', (req, res) => {
-    res.send("About page")
+    res.send("<h1>About Weather App</h1>")
 })
 
 // app.com/weather
 app.get('/weather', (req, res) => {
-    res.send("Weather page")
+    res.send({
+        forecast: "Sunny",
+        location: "Flint"
+    })
 })
 
 app.listen(3000, () => console.log('Server is up on port 3000.'))
