@@ -14,12 +14,20 @@ request({url: url, json: true}, function (error, response, body) {
     
  });
 
-/*
+
  const flintURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/Flint.json?access_token=pk.eyJ1Ijoia2l3aXNob3QiLCJhIjoiY2p0OGkzbDBoMDhkczQ0cXlqcnl4Nm52MiJ9.HYKyM0sBBz8bQ9ZULgE1Tw&limit=1&country=gb'
+ const failURL = 'https://api.mapbox.com/geocoding/v5/mapbox.places/NDNAkdk.json?access_token=pk.eyJ1Ijoia2l3aXNob3QiLCJhIjoiY2p0OGkzbDBoMDhkczQ0cXlqcnl4Nm52MiJ9.HYKyM0sBBz8bQ9ZULgE1Tw&limit=1&country=gb'
 
  request({url: flintURL, json: true}, function(error, response, body){
     
-     console.log("Longitude: " + response.body.features[0].center[0])
-     console.log("Latitude: " + response.body.features[0].center[1])
+    if(error){
+        console.log('Unable to connect to geo services.')
+    } else if(response.body.features.length === 0){
+        console.log('Not valid location')   
+    } else{
+        console.log("Longitude: " + response.body.features[0].center[0])
+        console.log("Latitude: " + response.body.features[0].center[1])
+    }
+    
  });
- */
+ 
