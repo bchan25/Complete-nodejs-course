@@ -9,14 +9,21 @@ const shortNames = names.filter((name) => {
     return name.length <= 4
 })
 
+// Callback pattern
 const geoCode = (address, callback) => {
-    const data = {
-        latitude: 0,
-        longitude: 0
-    }
-
-    return data
+    
+    setTimeout(() => {
+        const data = {
+            latitude: 0,
+            longitude: 0
+        }
+        
+        callback(data)
+    }, 2000)
+    
 }
 
-const data = geoCode('Flint')
-console.log(data)
+geoCode('Flint', (data) => {
+    console.log(data)
+})
+
