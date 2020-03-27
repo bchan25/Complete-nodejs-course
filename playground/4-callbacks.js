@@ -1,3 +1,4 @@
+/*
 // Callback function - provide a function in a function to call later
 setTimeout(() => {
     console.log('Two seconds are up')
@@ -25,5 +26,17 @@ const geoCode = (address, callback) => {
 
 geoCode('Flint', (data) => {
     console.log(data)
+})
+*/
+
+
+const add = (a, b, callback) => {
+    setTimeout(() => {
+        callback(a + b)
+    }, 2000)
+}
+
+add(1, 4, (sum) => {
+    console.log(sum) // Should print: 5
 })
 
