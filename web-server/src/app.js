@@ -43,11 +43,20 @@ app.get('/help', (req, res) => {
 
 // app.com/weather
 app.get('/weather', (req, res) => {
+    if(!req.query.address){
+        return res.send({
+            error: 'You must provide a valid address.'
+        })
+    }
+
     res.send({
-        forecast: "Sunny",
-        location: "Flint"
+        forcast: "It's Sunny",
+        location: 'Flint',
+        address: req.query.address
     })
 })
+
+
 
 // Help Error
 app.get('/help/*', (req, res) => {
