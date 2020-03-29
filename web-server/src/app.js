@@ -3,12 +3,20 @@ const express = require('express')
 
 
 const app = express()
+
+// Define paths for Express Config
 const publicDirectory = path.join(__dirname, '../public')
+// Custom HBS path
+const viewsPath = path.join(__dirname, '../templates')
+
 
 // Dynamic Templates
 app.set('view engine', 'hbs')
+app.set('views', viewsPath)
+
 // Static HTML Files
 app.use(express.static(publicDirectory))
+
 
 app.get('', (req, res) => {
     res.render('index', {
